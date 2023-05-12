@@ -15,8 +15,8 @@ import { removeBookId } from '../utils/localStorage';
 
 const SavedBooks = () => {
   const [userData, setUserData] = useState({});
-  const [removeBook] = useMutation(REMOVE_BOOK); 
-  
+  const [removeBook] = useMutation(REMOVE_BOOK);
+  // onCompleted option will call setUserData w/ data from query 
   const { loading } = useQuery(GET_ME, { onCompleted: setUserData });
 
   // bookId provided by Google Book's API
@@ -28,10 +28,14 @@ const SavedBooks = () => {
     }
 
     try {
-      const { updatedUser } = await removeBook({
-        variables: { bookId: bookId }
+      const { data } = await removeBook({
+        variables: { bookId: bookId },
       });
+      // TODO: Remove
+      console.log(data);
 
+      const updatedUser = data.removeBook;
+      
       if (updatedUser) {
         setUserData(updatedUser);
         // upon success, remove book's id from localStorage
