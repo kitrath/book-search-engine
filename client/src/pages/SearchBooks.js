@@ -24,7 +24,7 @@ const SearchBooks = () => {
   const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
   
   // create mutation to save a book
-  const [saveBook, { data }] = useMutation(SAVE_BOOK);
+  const [saveBook] = useMutation(SAVE_BOOK);
 
   // set up useEffect hook to save `savedBookIds` list to localStorage on component unmount
   // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
@@ -81,11 +81,11 @@ const SearchBooks = () => {
         variables: { input: bookToSave }
       });
       // TODO: Remove
-      console.log('saveBook() mutation data', data);
-      if (data) {
-        // if book successfully saves to user's account, save book id to state
-        setSavedBookIds([...savedBookIds, bookToSave.bookId]);
-      }
+      console.log(data);
+      // if book successfully saves to user's account, save book id to state
+      setSavedBookIds([...savedBookIds, bookToSave.bookId]);
+      // save book ids in localStorage
+      saveBookIds(savedBookIds);
     } catch (err) {
       console.error(err);
     }
@@ -127,8 +127,8 @@ const SearchBooks = () => {
         <Row>
           {searchedBooks.map((book) => {
             return (
-              <Col md="4">
-                <Card key={book.bookId} border='dark'>
+              <Col md="4" key={book.bookId}>
+                <Card border='dark'>
                   {book.image ? (
                     <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' />
                   ) : null}

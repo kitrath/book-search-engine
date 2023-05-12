@@ -1,37 +1,18 @@
 # Book Search Engine
 
-## User Story
-**AS AN** avid reader<br>
-**I WANT** to search for new books to read<br>
-**SO THAT** I can keep a list of books to purchase
+## Description
+A simple simple app for authenticated users to manage their personal library that leverages the Google Books API.  Book Search Engine is built using the **MERN** stack ([MongoDB](https://www.mongodb.com/), [Express](https://expressjs.com/), [ReactJS](https://react.dev/), and [Nodejs](https://nodejs.org/en)).  A [GraphQL](https://graphql.org/) API connects the back-end data store to the single-page application in the browser. [JSON Web Tokens](https://jwt.io/) authenticate each logged-in request from the browser to the API.
+<br><br>
+**Book Search Engine Live Example: []()**
+## Installation
+For local development:
+1. Clone this repository: `git clone git@github.com:kitrath/book-search-engine`
+2. Navigate to the base directory: `cd book-search-engine`
+3. Install dependencies: `npm install`
+6. Start the server: `npm run develop`
+7. Visit `http://localhost:3000` in your browser (your default browser should open automatically)
+## Usage
+Click Login/Signup in the top right.  Choose Sign Up from the options on the modal popover to create an account.  Once you have created an account, you can log in with an email and a password.  A logged in user can conduct searches on the Google Books API and select books to save in their library.  All saved books for a user can be seen when logged in by clicking See Your Books in the top bar.  A user can browse through their saved books and remove books that have already been read.
 
-## ACCEPTANCE CRITERIA
-**GIVEN** a book search engine
-- **WHEN** I load the search engine<br>
-**THEN** I am presented with a menu with the options Search for Books and Login/Signup adn an input field to search for books and a submit button
-- **WHEN** I click on the Search for Books menu option<br>
-**THEN** I am presented with an input field to search for books and a submit button
-- **WHEN** I am not logged in and enter a search term in the input field and click the submit button<br>
-**THEN** I am presented with several search results, each featuring a book's title, author, description, image, and a link to that book on the Google Books site
-- **WHEN** I click on the Login/Signup menu option<br>
-**THEN** a modal appears on the screen with a toggle between the option to log in or sign up
-- **WHEN** the toggle is set to Signup<br>
-**THEN** I am presented with three inputs for a username, an email address, and a password, and a signup button
-- **WHEN** the toggle is set to Login<br>
-**THEN** I am presented with two inputs for an email address and a password and login button
-- **WHEN** I enter a valid email address and create a password and click on the signup button<br>
-**THEN** my user account is created and I am logged in to the site
-- **WHEN** I enter my account's email address and password and click on the login button<br>
-**THEN** the modal closes and I am logged in to the site
-- **WHEN** I am logged in to the site<br>
-**THEN** the menu options change to Search for Books, an option to see my saved books, and Logout
-- **WHEN** I am logged in and enter a search term in the input field and click the submit button<br>
-**THEN** I am presented with several search results, each featuring a book's title, author, description, image, and a link to that book onthe Google Books site and a button to save a book to my account
-- **WHEN** I click on the Save button on a book<br>
-**THEN** that book's information is saved to my account
-- **WHEN** I click on the option to see my saved books<br>
-**THEN** I am presented with all of the books I have saved to my account, each featuring the book's title, author, description, image, and a link to that book on the Google Books site and a button to remove a book from my acount
-- **WHEN** I click on the Remove button on a book<br>
-**THEN** that book is deleted from my saved books list
-- **WHEN** I click on the Logout button<br>
-**THEN** I am logged out of the site and presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button
+## Screenshot
+<p align="center"><img src="./screen.png" width="600px" /></p>
