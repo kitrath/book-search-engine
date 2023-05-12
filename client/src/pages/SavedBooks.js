@@ -8,17 +8,16 @@ import {
 } from 'react-bootstrap';
 import { useMutation, useQuery } from '@apollo/client';
 
-// import { getMe, deleteBook } from '../utils/API';
 import Auth from '../utils/auth';
 import { GET_ME } from '../utils/queries';
 import { REMOVE_BOOK } from '../utils/mutations';
 import { removeBookId } from '../utils/localStorage';
 
 const SavedBooks = () => {
+  const [userData, setUserData] = useState({});
   const [removeBook] = useMutation(REMOVE_BOOK); 
   
-  const { loading, data } = useQuery(GET_ME);
-  const [userData, setUserData] = useState(data?.me || {});
+  const { loading } = useQuery(GET_ME, { onCompleted: setUserData });
 
   // bookId provided by Google Book's API
   const handleDeleteBook = async (bookId) => {
