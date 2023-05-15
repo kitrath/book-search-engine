@@ -18,8 +18,7 @@ const SavedBooks = () => {
   // onCompleted option will call setUserData w/ data from query 
   const { loading, data } = useQuery(GET_ME);
   let userData = data?.me || {};
-  // TODO: Remove
-  console.log("userData in <SavedBooks/>", userData);
+
   // bookId provided by Google Book's API
   const handleDeleteBook = async (bookId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
