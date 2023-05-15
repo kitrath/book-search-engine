@@ -1,7 +1,7 @@
 # Book Search Engine
 
 ## Description
-A simple simple app for authenticated users to manage their personal library that leverages the Google Books API.  Book Search Engine is built using the **MERN** stack ([MongoDB](https://www.mongodb.com/), [Express](https://expressjs.com/), [ReactJS](https://react.dev/), and [Nodejs](https://nodejs.org/en)).  A [GraphQL](https://graphql.org/) API connects the back-end data store to the single-page application in the browser. [JSON Web Tokens](https://jwt.io/) authenticate each logged-in request from the browser to the API.
+A simple app for authenticated users to manage their personal library that leverages the Google Books API.  Book Search Engine is built using the **MERN** stack ([MongoDB](https://www.mongodb.com/), [Express](https://expressjs.com/), [ReactJS](https://react.dev/), and [Nodejs](https://nodejs.org/en)).  A [GraphQL](https://graphql.org/) API connects the back-end data store to the single-page application in the browser. [JSON Web Tokens](https://jwt.io/) authenticate each logged-in request from the browser to the API.
 <br><br>
 **Book Search Engine Live Example: [https://kitrath-book-search.herokuapp.com](https://kitrath-book-search.herokuapp.com/)**
 ## Installation
